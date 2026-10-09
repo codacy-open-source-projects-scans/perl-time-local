@@ -204,7 +204,7 @@ sub _test_diff_between_two_calls {
 
                 for my $sec ( 0, 0.1 ) {
 
-                    # Diff beween Jan 1, 1980 and Mar 1, 1980 = (31 + 29 = 60 days)
+                    # Diff between Jan 1, 1980 and Mar 1, 1980 = (31 + 29 = 60 days)
                     is(
                               $sub_ref->( $sec, 0, 0, 1, 2, $year )
                             - $sub_ref->( $sec, 0, 0, 1, 0, $year ),
@@ -400,8 +400,8 @@ sub _test_2_digit_years {
                             timelocal_modern( 0, 0, 0, 1, 1, $pre_break )
                         )
                     )[5]
-                )
-                + 1900,
+                    )
+                    + 1900,
                 $pre_break,
                 "year $pre_break is treated as year $pre_break",
             );
@@ -412,8 +412,8 @@ sub _test_2_digit_years {
                             timelocal_modern( 0, 0, 0, 1, 1, $break )
                         )
                     )[5]
-                )
-                + 1900,
+                    )
+                    + 1900,
                 $break,
                 "year $break is treated as year $break",
             );
@@ -424,8 +424,8 @@ sub _test_2_digit_years {
                             timelocal_modern( 0, 0, 0, 1, 1, $post_break )
                         )
                     )[5]
-                )
-                + 1900,
+                    )
+                    + 1900,
                 $post_break,
                 "year $post_break is treated as year $post_break",
             );
@@ -435,16 +435,16 @@ sub _test_2_digit_years {
 
 sub _test_invalid_values {
     my %bad = (
-        'month > bounds'  => [ 1995, 13, 1,  1,  1,  1 ],
-        'day > bounds'    => [ 1995, 2,  30, 1,  1,  1 ],
-        'hour > bounds'   => [ 1995, 2,  10, 25, 1,  1 ],
-        'minute > bounds' => [ 1995, 2,  10, 1,  60, 1 ],
-        'second > bounds' => [ 1995, 2,  10, 1,  1,  60 ],
-        'month < bounds'  => [ 1995, -1, 1,  1,  1,  1 ],
-        'day < bounds'    => [ 1995, 2,  -1, 1,  1,  1 ],
-        'hour < bounds'   => [ 1995, 2,  10, -1, 1,  1 ],
-        'minute < bounds' => [ 1995, 2,  10, 1,  -1, 1 ],
-        'second < bounds' => [ 1995, 2,  10, 1,  1,  -1 ],
+        'month > bounds'  => [ 1995, 13, 1,   1,  1, 1 ],
+        'day > bounds'    => [ 1995,  2, 30,  1,  1, 1 ],
+        'hour > bounds'   => [ 1995,  2, 10, 25,  1, 1 ],
+        'minute > bounds' => [ 1995,  2, 10,  1, 60, 1 ],
+        'second > bounds' => [ 1995,  2, 10,  1,  1, 60 ],
+        'month < bounds'  => [ 1995, -1, 1,   1,  1, 1 ],
+        'day < bounds'    => [ 1995,  2, -1,  1,  1, 1 ],
+        'hour < bounds'   => [ 1995,  2, 10, -1,  1, 1 ],
+        'minute < bounds' => [ 1995,  2, 10,  1, -1, 1 ],
+        'second < bounds' => [ 1995,  2, 10,  1,  1, -1 ],
     );
 
     for my $sub ( grep { !/nocheck/ } @local_subs, @gm_subs ) {

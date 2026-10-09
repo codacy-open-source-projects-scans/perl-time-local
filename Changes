@@ -255,7 +255,7 @@
 
 1.08    2004-04-07
 
-- Changed occurences of "UTC" to "GMT" in order to agree with POSIX,
+- Changed occurrences of "UTC" to "GMT" in order to agree with POSIX,
   which defines the epoch in terms of GMT.
 
 - Documented the behavior of timelocal() when given a local time that

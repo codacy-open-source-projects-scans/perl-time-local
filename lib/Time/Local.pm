@@ -44,13 +44,11 @@ if ( $] < 5.012000 ) {
     if ( $^O eq 'MacOS' ) {
 
         # time_t is unsigned...
-        $MaxInt = ( 1 << ( 8 * $Config::Config{ivsize} ) )
-            - 1;    ## no critic qw(ProhibitPackageVars)
+        $MaxInt = ( 1 << ( 8 * $Config::Config{ivsize} ) ) - 1;    ## no critic qw(ProhibitPackageVars)
     }
     else {
         $MaxInt
-            = ( ( 1 << ( 8 * $Config::Config{ivsize} - 2 ) ) - 1 ) * 2
-            + 1;    ## no critic qw(ProhibitPackageVars)
+            = ( ( 1 << ( 8 * $Config::Config{ivsize} - 2 ) ) - 1 ) * 2 + 1;  ## no critic qw(ProhibitPackageVars)
     }
 
     $MaxDay = int( ( $MaxInt - ( SECS_PER_DAY / 2 ) ) / SECS_PER_DAY ) - 1;

@@ -1,0 +1,3 @@
+# "Aas" is Gisle Aas, a contributor, not a misspelling of "As".
+[default.extend-words]
+Aas = "Aas"
